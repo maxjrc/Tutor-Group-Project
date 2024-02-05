@@ -1,4 +1,4 @@
-# Group Tutor Project by Max Croft
+#The Group Tutor Project by Max Croft
 
 import sqlite3
 import random
