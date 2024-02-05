@@ -65,10 +65,12 @@ def login():
             print("Login Successful")
             user = rows[0]
             menu(user)
+          
         else:
             print("Login Failed. Please try again")
             login()
 
+# This function is not accessable unless code is edited directly to add it =
 def createstafflogin():
     print("Create Staff Login")
     print("Please enter your details below")
@@ -81,7 +83,7 @@ def createstafflogin():
     conn.commit()
     print("Login Created Successfully")
 
-
+# Creates a student
 def createstudent(user):
     print("Create A Student")
     print("Please enter the student details below: ")
@@ -97,6 +99,8 @@ def createstudent(user):
     conn.commit()
     print("Student Created Successfully")
 
+
+# Edit Student (This will let admins edit student detals)
 def editstudent(user):
     print("Edit Student")
     print("Please enter the student details below: ")
@@ -147,6 +151,7 @@ def editstudent(user):
         print("Invalid Choice. Please try again")
         editstudent(user)
 
+# Search for a student 
 def viewstudentdetails(user):
     search = input("Search By: ")
     student = input("Search Quary: ")
@@ -169,7 +174,8 @@ def viewstudentdetails(user):
             print("Gender: " + row[6])
             print("Tutor Group: " + row[7])
             print("=====================================")
-            
+
+# Delete a student from the system
 def deletestudent(user):
     print("Delete A Student") 
     search = input("Search By: ")
@@ -192,7 +198,8 @@ def deletestudent(user):
             print("Invalid Choice. Please try again")
             deletestudent()
 
-    
+
+# Generate a report for parents on a student
 def generatereport(user):
     print("Generate Report")
     student = input("Student ID: ")
