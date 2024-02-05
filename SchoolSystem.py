@@ -51,6 +51,9 @@ def menu(user):
         menu(user)
 
 def login():
+    attempts = 0
+    if attempts == 3:
+        print("You cannot login due to too many wrong attempts. Please try again later.")
     print("Welcome to the School System")
     print("Please enter your username and password")
     username = input("Username: ")
@@ -59,6 +62,7 @@ def login():
     rows = curr.fetchall()
     if len(rows) == 0:  # Check if rows list is empty
         print("No Login Found. Please try again")
+        attempts = attempts + 1
         login()
     else:  
         if username == rows[0][3] and password == rows[0][4]:
@@ -68,7 +72,9 @@ def login():
           
         else:
             print("Login Failed. Please try again")
+            attempts = attempts + 1
             login()
+
 
 # This function is not accessable unless code is edited directly to add it =
 def createstafflogin():
